@@ -47,6 +47,15 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
   document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', closeMenu));
 
+  document.querySelector('.projects-grid')?.insertAdjacentHTML('beforeend', `
+    <article class="project-card reveal visible">
+      <div class="project-icon energy"><i class="fa-solid fa-receipt"></i></div>
+      <h3>Billiqo</h3>
+      <p>Billing and invoicing platform for managing payments, customer accounts and streamlined financial workflows.</p>
+      <div class="tags"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>AWS</span></div>
+    </article>
+  `);
+
   const navLinks = [...document.querySelectorAll('.desktop-nav a')];
   const sections = document.querySelectorAll('main section[id]');
   const navigationObserver = new IntersectionObserver(entries => entries.forEach(entry => {
